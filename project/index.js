@@ -12,13 +12,17 @@ fetch('https://www.thecocktaildb.com/api/json/v1/1/search.php?f=a')
             let link = document.createElement("a");
             link.href = "details.html";
 
+            link.addEventListener("click", () => {
+                localStorage.setItem("details", JSON.stringify(drinks[i]))
+             })
+
             title.innerHTML = drinks[i].strDrink;
             ingr.innerHTML = drinks[i].strMeasure1 + drinks[i].strIngredient1;
             img.src = drinks[i].strDrinkThumb;
             img.style.width = '300px';
             img.style.height = '300px';
             link.append(title, img);
-            parent.append(ingr);
+            parent.append(ingr, link);
         }
     })
     .catch(error => console.log(error));
