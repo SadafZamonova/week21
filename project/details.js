@@ -10,7 +10,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
 document.querySelector("#submit").addEventListener("click", (evt) => {
     evt.preventDefault();
     localStorage.setItem("favorites", JSON.stringify(detailsObject));
-    document.location.href = "function.html";
+    document.location.href = "favorites.html";
             
 })
 });

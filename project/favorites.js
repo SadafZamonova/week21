@@ -1,5 +1,5 @@
 document.addEventListener("DOMContentLoaded", function (event) {
-    const detailsObject = JSON.parse(localStorage.getItem("details"));
+    const detailsObject = JSON.parse(localStorage.getItem("favorites"));
     console.log(detailsObject);
     document.querySelector("#title").innerHTML = detailsObject.strDrink;
     document.querySelector("#img").src = detailsObject.strDrinkThumb;
