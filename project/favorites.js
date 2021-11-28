@@ -1,9 +1,9 @@
 document.addEventListener("DOMContentLoaded", function (event) {
-    const detailsObject = JSON.parse(localStorage.getItem("favorites"));
-    console.log(detailsObject);
-    document.querySelector("#title").innerHTML = detailsObject.strDrink;
-    document.querySelector("#img").src = detailsObject.strDrinkThumb;
-    document.querySelector("#ingr").innerHTML = detailsObject.strMeasure1 + detailsObject.strIngredient1;
+    const favoritesObject = JSON.parse(localStorage.getItem("favorites"));
+    console.log(favoritesObject);
+    document.querySelector("#title").innerHTML = favoritesObject.strDrink;
+    document.querySelector("#img").src = favoritesObject.strDrinkThumb;
+    document.querySelector("#ingr").innerHTML = favoritesObject.strMeasure1 + favoritesObject.strIngredient1;
     img.style.width = '300px';
     img.style.height = '300px';
 

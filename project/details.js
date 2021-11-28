@@ -16,11 +16,29 @@ document.addEventListener("DOMContentLoaded", function (event) {
             favoritesFromStorage = [];
         }
 
-        favoritesFromStorage.push(detailsObject);
+        
+        // Проверяем, есть ли уже такой объект в массиве или нет
+        const index = favoritesFromStorage.findIndex(function(x) { // Вернет -1, если не найдет элемент
+            return x.idDrink === detailsObject.idDrink
+        })
 
-        localStorage.setItem("favorites", JSON.stringify(favoritesFromStorage));
+        if (index < 0) {
+            // Такого элемента нет в массиве
 
-       // document.location.href = "favorites.html";
+            // Добавляем новый элемент в массив
+            favoritesFromStorage.push(detailsObject);
 
+            // Переводим в строку массив и сохраняем в хранилище
+            localStorage.setItem("favorites", JSON.stringify(favoritesFromStorage));
+
+            // Переводим пользователя на страницу Избранное
+            // document.location.href = "favorites.html";
+        } else {
+            // Такой элемент уже есть в массиве
+            // Уведомляем пользователя об ошибке
+            window.alert('Упс. Вы уже добавили этот коктейль :(')
+        }
+        document.location.href = "favorites.html";
     })
 });
+
