@@ -32,13 +32,12 @@ document.addEventListener("DOMContentLoaded", function (event) {
             localStorage.setItem("favorites", JSON.stringify(favoritesFromStorage));
 
             // Переводим пользователя на страницу Избранное
-            // document.location.href = "favorites.html";
+            document.location.href = "favorites.html";
         } else {
             // Такой элемент уже есть в массиве
             // Уведомляем пользователя об ошибке
             window.alert('Упс. Вы уже добавили этот коктейль :(')
         }
-        document.location.href = "favorites.html";
     })
 });
 
